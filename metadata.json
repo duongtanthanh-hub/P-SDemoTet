@@ -1,0 +1,7 @@
+{
+  "name": "Copy of P/S Tet Family Moment Generator",
+  "description": "Generate personalized family photos and videos to celebrate Tet. Upload up to five photos to create a festive family portrait, then bring it to life with an animated video, complete with a P/S sparkling smile effect.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
