@@ -61,14 +61,13 @@
 
 **Primary Objective:** Preserve the exact facial likeness of each person. It is absolutely critical that their faces, hair, and unique features look identical to the source photos. Do not generate new faces or alter their appearances.
 
+**Constraint: Number of People:** First, count the number of unique individuals present across all uploaded photos. The final generated image MUST contain this exact number of people. Do not add or omit any person.
+
 **Scene Details:**
 - The family should be gathered happily around a table, enjoying a festive Tet meal together.
 - Dress all family members in beautiful, traditional Vietnamese Ao Dai outfits in vibrant Tet colors (red, gold, etc.).
 - The overall atmosphere must be joyful, warm, and celebratory.
 - The final image should be a seamless and believable composition.
-
-**Branding:**
-- Subtly integrate a simple, elegant 'P/S' logo in the bottom right corner.
 
 The final output must be a single, high-quality image that accurately represents the people provided.`;
       
@@ -96,7 +95,7 @@ The final output must be a single, high-quality image that accurately represents
       const generateFamilyVideo = async (imageBase64) => {
           const ai = new GoogleGenAI({ apiKey: API_KEY });
       
-          const prompt = `An 8-second animated video based on the provided image of a family celebrating Tet. The family members should show subtle, realistic motion: gently laughing, smiling, and interacting warmly with each other while enjoying their meal. The atmosphere is festive and joyful. Include a background of gentle, happy Tet music and soft ambient sounds of a family gathering. Towards the very end of the video (last 2 seconds), apply a magical, noticeable sparkling effect to everyone's teeth to highlight their bright smiles. A 'P/S' logo should be visible in the bottom right corner throughout the video.`;
+          const prompt = `An 8-second animated video based on the provided image of a family celebrating Tet. The family members should show subtle, realistic motion: gently laughing, smiling, and interacting warmly with each other while enjoying their meal. The atmosphere is festive and joyful. Include a background of gentle, happy Tet music and soft ambient sounds of a family gathering. Towards the very end of the video (last 2 seconds), apply a magical, noticeable sparkling effect to everyone's teeth to highlight their bright smiles.`;
       
           let operation = await ai.models.generateVideos({
               model: 'veo-3.1-fast-generate-preview',
@@ -258,11 +257,11 @@ The final output must be a single, high-quality image that accurately represents
         const [error, setError] = useState(null);
 
         const PsLogo = ({ className }) => (
-          <div className={`font-bold text-4xl lg:text-5xl ${className}`}>
-            <span className="text-blue-800">P</span>
-            <span className="text-blue-800">/</span>
-            <span className="text-blue-800">S</span>
-          </div>
+          <img 
+            src="https://assets.unileversolutions.com/v1/120341483.png" 
+            alt="P/S Logo" 
+            className={`h-10 lg:h-12 ${className}`}
+          />
         );
 
         const videoLoadingMessages = [
