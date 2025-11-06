@@ -57,7 +57,20 @@
           })
         );
       
-        const prompt = `Create a new, single, composite image featuring the people from all the uploaded photos. The scene should be a warm, happy family gathered around a table, enjoying a festive Tet meal together. All family members should be dressed in beautiful, traditional Vietnamese Ao Dai outfits in vibrant Tet colors like red and gold. The overall atmosphere must be joyful and celebratory. In the bottom right corner, please subtly integrate a simple, elegant 'P/S' logo. The final output should be a single image.`;
+        const prompt = `Create a new, single, photorealistic composite image featuring the people from the uploaded photos.
+
+**Primary Objective:** Preserve the exact facial likeness of each person. It is absolutely critical that their faces, hair, and unique features look identical to the source photos. Do not generate new faces or alter their appearances.
+
+**Scene Details:**
+- The family should be gathered happily around a table, enjoying a festive Tet meal together.
+- Dress all family members in beautiful, traditional Vietnamese Ao Dai outfits in vibrant Tet colors (red, gold, etc.).
+- The overall atmosphere must be joyful, warm, and celebratory.
+- The final image should be a seamless and believable composition.
+
+**Branding:**
+- Subtly integrate a simple, elegant 'P/S' logo in the bottom right corner.
+
+The final output must be a single, high-quality image that accurately represents the people provided.`;
       
         const response = await ai.models.generateContent({
           model: 'gemini-2.5-flash-image',
